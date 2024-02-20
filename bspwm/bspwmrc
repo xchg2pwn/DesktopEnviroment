@@ -1,0 +1,23 @@
+#!/bin/sh
+
+wmname LG3D &
+
+killall tint2
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d          
+bspc config border_width 0
+bspc config window_gap 10
+bspc config split_ratio 0
+bspc config border_width 0
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config focus_follows_pointer true
+
+feh --bg-fill ~/.config/wallpaper/wallpaper.png
+picom --config ~/.config/picom/picom.conf &
+
+vmware-user-suid-wrapper &
+tint2 -c ~/.config/tint2/tint2rc &
+tint2 -c ~/.config/tint2/tint3rc &
+setxkbmap es

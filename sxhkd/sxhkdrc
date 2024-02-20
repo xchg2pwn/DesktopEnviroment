@@ -1,0 +1,76 @@
+super + Return
+	gnome-terminal
+
+super + d
+	rofi -show drun
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + alt + {q,e}
+	bspc {quit,wm -r}
+
+super + {_,shift + }w
+	bspc node -{c,k}
+
+super + m
+	bspc desktop -l next
+
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+super + g
+	bspc node -s biggest.window
+
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + ctrl + alt + {Down,Up,Right}
+	bspc node -p {south,north,east}
+
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+super + ctrl + alt + space
+	bspc node -p cancel
+
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + shift + g
+	google-chrome
+
+super + shift + b
+        burpsuite
+
+super + shift + s
+	flameshot gui

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo -e "\033[0;37m[\033[0;31m-\033[0;37m] Usage: cobaltstrike <local_ip>"
+    exit 1
+fi
+
+cd /opt/CobaltStrike
+sudo bash teamserver $1 password &
+bash client &

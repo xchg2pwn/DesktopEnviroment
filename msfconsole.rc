@@ -1,0 +1,3 @@
+set Prompt %whi[%grnmsf%whi](%yelJobs%whi:%J%whi %bluAgents%whi:%S%whi)
+set PromptChar >>
+set meterpreterPrompt (%grnMeterpreter %blu%S%whi)(%D)
